@@ -28,27 +28,39 @@ $people = [
 ];
 
 //Loop?
-
 for ($i = 0; $i < count($people); $i++){
   processPerson($people[$i][0], $people[$i][1]);
 }
 
-  //echo "Name: " . $name . " ";
+//echo "Name: " . $name . " ";
   //echo "NBT: ". $NBT;
   //echo " | ";
 
+$result = [];
+  
 function processPerson( $name, $NBT ) {
- $result = [];
- $result[0] = $name;
- $result[1] = $NBT;
- //print_r($result);
+ //global $result;   
+ //$result[0] = $name;
+ //$result[1] = $NBT;
 }
+
 
 function willBecomeZombie( $NBT ) {
+  // will return true or false
   
+  $becomeZombie;
+  
+  if ($NBT % 7 >= 2) {
+      return $becomeZombie = "Zombie!";
+  } else {
+      return $becomeZombie = "Still Human";
+  }
 }
 
+
 function infectionRateCalculation( $NBT ) {
+  
+  return $infectionRate = ($NBT / 19307) * 0.1257;
   
 }
 
