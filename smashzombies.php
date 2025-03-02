@@ -33,11 +33,15 @@ for ($i = 0; $i < count($people); $i++){
   processPerson($people[$i][0], $people[$i][1]);
 }
 
+  //echo "Name: " . $name . " ";
+  //echo "NBT: ". $NBT;
+  //echo " | ";
 
 function processPerson( $name, $NBT ) {
-  echo "Name: " . $name . " ";
-  echo "NBT: ". $NBT;
-  echo " | ";
+ $result = [];
+ $result[0] = $name;
+ $result[1] = $NBT;
+ //print_r($result);
 }
 
 function willBecomeZombie( $NBT ) {
