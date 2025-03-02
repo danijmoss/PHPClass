@@ -29,45 +29,49 @@ $people = [
 
 //Loop?
 for ($i = 0; $i < count($people); $i++){
-  processPerson($people[$i][0], $people[$i][1]);
+    processPerson($people[$i][0], $people[$i][1]);
 }
 
-//echo "Name: " . $name . " ";
-  //echo "NBT: ". $NBT;
-  //echo " | ";
-
-$result = [];
-  
+    
 function processPerson( $name, $NBT ) {
- //global $result;   
- //$result[0] = $name;
- //$result[1] = $NBT;
+   $becomeZombie = willBecomeZombie($NBT);
+   $infectionRate = infectionRateCalculation( $NBT );
+   $curability = curable($NBT);
+   outputInfo($name, $becomeZombie, $infectionRate, $curability);
 }
 
 
 function willBecomeZombie( $NBT ) {
-  // will return true or false
-  
-  $becomeZombie;
-  
-  if ($NBT % 7 >= 2) {
-      return $becomeZombie = "Zombie!";
-  } else {
-      return $becomeZombie = "Still Human";
-  }
+    // will return true or false
+    if (($NBT % 7) >= 2) {
+        return "Zombie!";
+    } else {
+        return "Still Human";
+    }
 }
 
 
 function infectionRateCalculation( $NBT ) {
-  
-  return $infectionRate = ($NBT / 19307) * 0.1257;
-  
+    return ($NBT / 19307) * 0.1257;
 }
 
 function curable( $NBT ) {
-  
+    
+    $result = ($NBT *(3+2) % 17);
+    
+    if ($result === 0 || $result === 7) {
+        return "Curable!";
+    } else {
+        return "Doomed!";
+    }
+    
 }
 
 function outputInfo( $name, $becomeZombie, $infectionRate, $curability ) {
+    echo "Name: " . $name . "/n";
+    echo "Status: " . $becomeZombie . "/n";
+    echo "Infection Rate: " . $infectionRate . "/n";
+    echo "Curability: " . $curability . "/n";
+    echo "/n";
   
 }
