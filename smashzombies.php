@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zombie Infection Status</title>
+</head>
+<body>
+  <h1>Zombie Infection Status</h1>
+
+</body>
+</html>
+
 <?php
 $people = [
   [ "Bob", 15402 ], 
@@ -68,10 +81,11 @@ function curable( $NBT ) {
 }
 
 function outputInfo( $name, $becomeZombie, $infectionRate, $curability ) {
-    echo "Name: " . $name . "/n";
-    echo "Status: " . $becomeZombie . "/n";
-    echo "Infection Rate: " . $infectionRate . "/n";
-    echo "Curability: " . $curability . "/n";
-    echo "/n";
+    echo "<section>"
+    echo "<p style='font-weight:bold;'> Name: " . $name . "</p>";
+    echo "<p>Status: " . $becomeZombie . "<p>";
+    echo "<p>Infection Rate: " . $infectionRate . "</p>";
+    echo "<p style='font-weight:bold;>Curability: " . $curability . "</p";
+    echo "</section>";
   
 }
