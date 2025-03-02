@@ -83,9 +83,9 @@ function curable( $NBT ) {
 function outputInfo( $name, $becomeZombie, $infectionRate, $curability ) {
     echo "<section>"
     echo "<p style='font-weight:bold;'> Name: " . $name . "</p>";
-    echo "<p>Status: " . $becomeZombie . "<p>";
+    echo "<p>Status: " . $becomeZombie . "</p>";
     echo "<p>Infection Rate: " . $infectionRate . "</p>";
-    echo "<p style='font-weight:bold;>Curability: " . $curability . "</p";
+    echo "<p style='font-weight:bold;>Curability: " . $curability . "</p>";
     echo "</section>";
   
 }
